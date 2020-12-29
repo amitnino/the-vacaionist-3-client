@@ -22,7 +22,7 @@ const Login = () => {
 
     const handleSubmit = async () => {
 
-        const data = await ApiService('POST', 'auth/login', { username, password })
+        const data = await ApiService('POST', 'auth/login', { username, password }, {})
 
         if (data.err) return dispatch({ type: SET_ALERT, payload: { severity: 'error', msg: data.msg.split(']')[1] } })
         
